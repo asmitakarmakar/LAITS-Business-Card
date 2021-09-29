@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<html>
+  <head>
+  <meta charset="UTF-8">
+    <title> Business Card Assignment </title> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" 
+        href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/
+        css2family=Fjalla+One&family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+    <script>
+      function isFlipped() {
+        document.getElementById("card").classList.toggle("isFlipped");
+      }
+    </script>
+
+    <style>
+      body{
+        background: white;
+      }
+    
+      .maincontainer{
+        position: absolute;
+        width: 620px;
+        height: 350px;
+        background: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    
+      .card{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transform-style: preserve-3d;
+        transition: all 0.8s ease;
+      }
+    
+      .isFlipped {
+        transform: rotateY(180deg);
+      }
+    
+      .front{
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        backface-visibility: hidden;
+        overflow: hidden;
+        background: black;
+        color: #000
+      }
+    
+      .back {
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        backface-visibility: hidden;
+        overflow: hidden;
+        background: black;
+        color: white;
+        text-align: center;
+        transform: rotateY(180deg);
+        line-height: 0.1;
+      }
+    
+      .column {
+        width: 45%;
+        padding: 10px;
+        color: white;
+        text-align: center;
+      }
+    
+      .left {
+        float: left;
+        padding-top: 40px;
+      }
+    
+      .right {
+        float: right;
+        padding-top: 17%;
+      }
+    
+      .front:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    
+      .personheader {
+        line-height: 0.5;
+        font-family: 'Fjalla One', sans-serif;
+        letter-spacing: 3px;
+      }
+    
+      .information {
+        font-family: 'Roboto', sans-serif;
+      }
+    
+      .verticalline { 
+        border-left: 4px solid yellow;
+        height: 75%;
+        position: absolute;
+        left: 50%;
+        margin-left: -2px;
+        top: 12.5%;
+      }
+    
+      .companynametop {
+        padding-top: 100px;
+        font-family: 'Fjalla One', sans-serif;
+        letter-spacing: 5px;
+        font-size: 90px;
+        font-weight: bold;
+      }
+    
+      .companynamebottom {
+        font-family: 'Roboto', sans-serif;
+        font-weight: lighter;
+        letter-spacing: 8px;
+        font-size: 25px;
+      }
+    
+    </style>
+    
+  </head>
+  
+  <body>
+    <div class="maincontainer">
+
+      <div class="card" id="card" onclick="isFlipped()">
+
+        <div class="front">
+          <div class="column left">
+            <br>
+            <br>
+            <br>
+            <div class="companyheader">
+              <img src="https://www.nicepng.com/png/full/326-3263888_wayne-enterprises-diagram.png" 
+                  width="200" height="100" alt="WayneEnterprisesLogo">
+              <h3 class="information">
+                (602) 746-8217<br>
+                7160 Gotham Blvd 76854
+              </h3>
+            </div>
+          </div>
+
+          <div class="verticalline"></div>
+
+          <div class="column right">
+            <div class="personheader">
+              <h1>
+                BRUCE WAYNE
+              </h1>
+              <h2>
+                CEO
+              </h2>
+           </div>
+           <h3 class="information">
+             <br>
+             (713) 622-6717<br>
+             bwayne08@gmail.com
+           </h3>
+          </div>
+        </div>
+
+        <div class="back">
+          <h1 class="companynametop">
+            WAYNE
+          </h1>
+          <h2 class="companynamebottom">
+            ENTERPRISES
+          </h2>
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+
+</html>
+
